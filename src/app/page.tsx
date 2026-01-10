@@ -13,8 +13,8 @@ export default function HomePage() {
   return (
     <>
       <Hero
-        title="La voix nationale de la pêche artisanale au Sénégal"
-        subtitle="Concertation interprofessionnelle • Gouvernance • Durabilité"
+        title=""
+        subtitle=""
         ctaPrimary="Découvrir le CONIPAS"
         ctaSecondary="Nos actions"
       />
