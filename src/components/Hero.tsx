@@ -29,12 +29,10 @@ export default function Hero({
       "
     >
       {/* Image plein HERO */}
-      <Image
+      <img
         src="/hero-conipas.png"
         alt="Pêche artisanale au Sénégal – CONIPAS"
-        fill
-        priority
-        className="object-cover"
+        className="absolute inset-0 w-full h-full object-cover"
       />
 
       {/* Overlay */}
