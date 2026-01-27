@@ -13,6 +13,7 @@ export default function HomePage() {
   return (
     <>
       <Hero
+        centered
         title=""
         subtitle=""
         ctaPrimary="Découvrir le CONIPAS"
