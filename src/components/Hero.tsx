@@ -30,7 +30,7 @@ export default function Hero({
     >
       {/* Image plein HERO */}
       <Image
-        src="/hero-conipas.webp"
+        src="/hero-conipas.png"
         alt="Pêche artisanale au Sénégal – CONIPAS"
         fill
         priority
