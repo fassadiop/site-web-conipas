@@ -1,14 +1,5 @@
-// src/components/Hero.tsx
-
 import Image from "next/image";
-
-type HeroProps = {
-  title?: string;
-  subtitle?: string;
-  ctaPrimary?: string;
-  ctaSecondary?: string;
-  centered?: boolean;
-};
+import heroImage from "@/assets/hero-conipas.png";
 
 export default function Hero({
   title,
@@ -16,76 +7,49 @@ export default function Hero({
   ctaPrimary,
   ctaSecondary,
   centered = false,
-}: HeroProps) {
+}: {
+  title?: string;
+  subtitle?: string;
+  ctaPrimary?: string;
+  ctaSecondary?: string;
+  centered?: boolean;
+}) {
   return (
-    <section
-      className="
-        relative
-        w-screen
-        h-[70vh]
-        min-h-[520px]
-        max-h-[820px]
-        overflow-hidden
-      "
-    >
-      {/* Image plein HERO */}
-      <img
-        src="/hero-conipas.png"
+    <section className="relative w-screen h-[70vh] min-h-[520px] overflow-hidden">
+      <Image
+        src={heroImage}
         alt="Pêche artisanale au Sénégal – CONIPAS"
-        className="absolute inset-0 w-full h-full object-cover"
+        fill
+        priority
+        className="object-cover"
       />
 
-      {/* Overlay */}
       <div className="absolute inset-0 bg-black/40" />
 
-      {/* Contenu */}
       <div className="relative z-10 flex h-full items-center">
         <div
-          className={`container mx-auto max-w-5xl px-4 text-white
-            ${centered ? "text-center flex flex-col items-center" : ""}
-          `}
+          className={`container mx-auto max-w-5xl px-4 text-white ${
+            centered ? "text-center" : ""
+          }`}
         >
-          {title && (
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              {title}
-            </h1>
-          )}
-
           {subtitle && (
-            <p
-              className={`text-lg md:text-xl text-gray-200 mb-8
-                ${centered ? "max-w-3xl" : "max-w-3xl"}
-              `}
-            >
+            <p className="text-xl md:text-2xl mb-8">
               {subtitle}
             </p>
           )}
 
-          {(ctaPrimary || ctaSecondary) && (
-            <div
-              className={`flex gap-4 flex-wrap
-                ${centered ? "justify-center" : ""}
-              `}
-            >
-              {ctaPrimary && (
-                <a
-                  href="/conipas"
-                  className="rounded-md bg-blue-700 px-6 py-3 font-semibold hover:bg-blue-800 transition"
-                >
-                  {ctaPrimary}
-                </a>
-              )}
-
-              {ctaSecondary && (
-                <a
-                  href="/actions"
-                  className="rounded-md border border-white px-6 py-3 font-semibold hover:bg-white hover:text-black transition"
-                >
-                  {ctaSecondary}
-                </a>
-              )}
-            </div>
-          )}
+          <div className="flex gap-4 justify-center">
+            {ctaPrimary && (
+              <a className="bg-blue-700 px-6 py-3 rounded-md">
+                {ctaPrimary}
+              </a>
+            )}
+            {ctaSecondary && (
+              <a className="border px-6 py-3 rounded-md">
+                {ctaSecondary}
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </section>
